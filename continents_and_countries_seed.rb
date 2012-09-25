@@ -1,3 +1,5 @@
+# encoding: utf-8
+
 Continent.delete_all
 connection.execute("ALTER TABLE continents AUTO_INCREMENT = 1")
 africa = Continent.create(:iso => 'AF', :name => 'Africa')
