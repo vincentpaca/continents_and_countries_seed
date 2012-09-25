@@ -1,7 +1,7 @@
 # encoding: utf-8
 
 Continent.delete_all
-connection.execute("ALTER TABLE continents AUTO_INCREMENT = 1")
+ActiveRecord::Base.connection.execute("ALTER TABLE continents AUTO_INCREMENT = 1")
 africa = Continent.create(:iso => 'AF', :name => 'Africa')
 asia = Continent.create(:iso => 'AS', :name => 'Asia')
 europe = Continent.create(:iso => 'EU', :name => 'Europe')
@@ -11,7 +11,7 @@ oceania = Continent.create(:iso => 'OC', :name => 'Oceania')
 antartica = Continent.create(:iso => 'AN', :name => 'Antarctica')
 
 Country.delete_all
-connection.execute("ALTER TABLE countries AUTO_INCREMENT = 1")
+ActiveRecord::Base.connection.execute("ALTER TABLE countries AUTO_INCREMENT = 1")
 Country.create(:iso => 'AF', :continent => asia, :name => "Afghanistan")
 Country.create(:iso => 'AX', :continent => europe, :name => "Åland Islands")
 Country.create(:iso => 'AL', :continent => europe, :name => "Albania")
